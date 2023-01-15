@@ -1,19 +1,38 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 function Overlay() {
+    //Animations
+    const titleAnim = {
+        hidden: { opacity: 0, x: -1000 },
+        show: { opacity: 1, x: 10, transition: { duration: 2 } },
+    };
+
+    const subTitleAnim = {
+        hidden: { x: 100 },
+        show: { x: 0, transition: { duration: 1.5, easing: "easeOut" } },
+    };
+
+    const dateAnim = {
+        hidden: { opacity: 0, x: 100 },
+        show: { opacity: 1, x: -10, transition: { duration: 2, easing: "easeIn" } },
+    };
+
     return (
         <Container>
             <div className='dog'>
-                <h1>DOG</h1>
-                <div>
+                <motion.div variants={titleAnim} initial='hidden' animate='show'>
+                    <h1>DOG</h1>
+                </motion.div>
+                <motion.div variants={dateAnim} initial='hidden' animate='show'>
                     <p>1/14/2023</p>
-                </div>
+                </motion.div>
             </div>
 
-            <div className='humans'>
+            <motion.div variants={subTitleAnim} initial='hidden' animate='show' className='humans'>
                 <p>Dogs are a humans best friend.</p>
-            </div>
+            </motion.div>
         </Container>
     );
 }
@@ -27,6 +46,7 @@ const Container = styled.div`
     pointer-events: none;
 
     .dog {
+        /* border: 1px solid black; */
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -35,13 +55,14 @@ const Container = styled.div`
         font-size: 6rem;
 
         h1 {
+            /* border: 1px solid black; */
+
             letter-spacing: 26px;
             margin: 0%;
         }
 
         p {
             font-size: 1rem;
-            margin-right: 1.5rem;
             letter-spacing: 10px;
         }
     }

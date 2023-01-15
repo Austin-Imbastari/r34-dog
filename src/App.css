@@ -33,3 +33,7 @@ body,
     src: url("../public/font/SuisseBPIntl-UltraLight.otf") format("OpenType");
     font-weight: lighter;
 }
+
+.dog:hover {
+    cursor: pointer;
+}

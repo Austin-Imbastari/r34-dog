@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
-import { OrbitControls, Environment, useGLTF, ContactShadows } from "@react-three/drei";
+import { OrbitControls, Environment, useGLTF, ContactShadows, useCursor } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
 function Dog(props) {
+    const [cursorHover, setCursorHover] = useState(false);
     const [dogRotate, setDogRotate] = useState(false);
     const dogRef = useRef();
+    useCursor(cursorHover);
 
     useFrame(({ clock }, delta) => {
         const t = clock.getElapsedTime();
@@ -25,7 +27,17 @@ function Dog(props) {
     //     scene.traverse((obj) => (obj.receiveShadow = obj.castShadow = true));
     // }, [scene]);
 
-    return <primitive onClick={() => setDogRotate(!dogRotate)} ref={dogRef} object={scene} {...props} />;
+    return (
+        <primitive
+            onPointerOver={() => {
+                setCursorHover(!cursorHover ? true : false);
+            }}
+            onClick={() => setDogRotate(!dogRotate)}
+            ref={dogRef}
+            object={scene}
+            {...props}
+        />
+    );
 }
 useGLTF.preload("https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/dog/model.gltf");
 
