@@ -31,7 +31,9 @@ function Overlay() {
             </div>
 
             <motion.div variants={subTitleAnim} initial='hidden' animate='show' className='humans'>
-                <p>Dogs are a humans best friend.</p>
+                <p>
+                    <span>Dogs</span> & <span>Milk</span> are a humans best friend.
+                </p>
             </motion.div>
         </Container>
     );
@@ -65,6 +67,11 @@ const Container = styled.div`
             font-size: 1rem;
             letter-spacing: 10px;
         }
+    }
+    span {
+        font-family: "gudimba";
+        font-weight: regular;
+        color: #ffcccc;
     }
 
     .humans {
