@@ -45,7 +45,7 @@ function Experience() {
             />
             <Environment preset='city' />
             <Dog scale={1} position-y={0} />
-            <ContactShadows resolution={512} position={[0, -0.99, 0]} opacity={0.8} scale={3} blur={10} far={3} />
+            <ContactShadows resolution={512} position={[0, -0.99, 0]} opacity={0.8} scale={2.5} blur={10} far={3} />
         </>
     );
 }
