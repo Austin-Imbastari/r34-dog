@@ -9,16 +9,15 @@ function Overlay() {
         show: { opacity: 1, x: 10, transition: { duration: 2 } },
     };
 
-    const subTitleAnim = {
-        hidden: { x: 100 },
-        show: { x: 0, transition: { duration: 1.5, easing: "easeOut" } },
-    };
-
     const dateAnim = {
         hidden: { opacity: 0, x: 100 },
-        show: { opacity: 1, x: -10, transition: { duration: 2, easing: "easeIn" } },
+        show: { opacity: 1, x: -10, transition: { duration: 2, easing: "easeOut" } },
     };
 
+    const subTitleAnim = {
+        hidden: { opacity: 0, x: 100 },
+        show: { opacity: 1, x: 0, transition: { duration: 1.5, easing: "easeOut" } },
+    };
     return (
         <Container>
             <div className='dog'>
