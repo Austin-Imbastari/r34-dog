@@ -1,4 +1,4 @@
-# kove-website
+# Three.js Dog
 A fun little website I created with Webgl library Three.js and React Three Fiber! Lets see if you can guess the easter egg I coded in. 
 
 ## Technologies Used
